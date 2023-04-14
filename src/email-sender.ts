@@ -36,7 +36,7 @@ class EmailSender {
     try {
       await this.transporter.sendMail(mailOptions);
       // await delay(1000);
-      console.info(`Email sent to ${recipient}`);
+      console.info(`Email sent to ${recipient} successfully`);
     } catch (error) {
       console.error(`Error sending email to ${recipient}:`, error);
     }

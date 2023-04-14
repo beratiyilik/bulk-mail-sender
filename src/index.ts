@@ -1,7 +1,8 @@
+import "./override-console.ts";
 import { getRecipients } from "./recipients.ts";
 import { getTemplates } from "./templates.ts";
 import { DELAY } from "./constants.ts";
-import { getRandomTemplate, scheduleEmails } from "./utils.ts";
+import { getRandomTemplate, scheduleEmails, delay as wait } from "./utils.ts";
 import EmailSender from "./email-sender.ts";
 import { getAttachments } from "./attachments.ts";
 
@@ -14,12 +15,14 @@ const main = async () => {
     ]);
     const delay = Number(DELAY);
     const emailSender = new EmailSender();
+    const initialNumberOfRecipients = recipients.length;
 
     const sendEmailToNextRecruiter = async () => {
       const recipient = recipients.shift();
 
       if (!recipient) {
-        console.info("All emails sent.");
+        console.info(`${initialNumberOfRecipients} number of emails sent`);
+        await wait(100);
         process.exit(0);
       }
 
