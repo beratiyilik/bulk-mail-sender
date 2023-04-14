@@ -1,0 +1,29 @@
+{
+  "name": "bulk-mail-sender",
+  "version": "1.0.0",
+  "description": "A Node.js app for sending bulk emails",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node-esm src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "email",
+    "bulk",
+    "sender"
+  ],
+  "author": "Berat İyilik <***> (https://beratiyilik.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "dotenv": "^16.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.1"
+  }
+}
